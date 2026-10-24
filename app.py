@@ -2,23 +2,29 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/')
+
+@app.route("/")
 def home():
-    return "Home Page 🏠"
-    return render_template('index.html')
+    return render_template("index.html")
 
 
-@app.route('/about')
+@app.route("/about")
 def about():
-    return "About Page ℹ️"
+    return render_template("about.html")
 
-@app.route('/submit', methods=['GET', 'POST'])
+
+@app.route("/form")
+def form():
+    return render_template("form.html")
+
+
+@app.route("/submit", methods=["POST"])
 def submit():
-    if request.method == 'POST':
-        name = request.form['name']
-        return f"Hello {name} 🔥"
-    return "Direct access not allowed 😅"
+    name = request.form.get("name", "").strip()
+    if not name:
+        return render_template("form.html", error="Naam likhna zaroori hai."), 400
+    return render_template("thanks.html", name=name)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
