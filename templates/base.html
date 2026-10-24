@@ -8,6 +8,8 @@
     body { font-family: Arial, sans-serif; max-width: 640px; margin: 0 auto; padding: 16px; }
     nav a { margin-right: 12px; }
     .error { color: #b00020; }
+    .entry { border-bottom: 1px solid #ddd; padding: 8px 0; }
+    input, textarea { width: 100%; padding: 8px; box-sizing: border-box; }
   </style>
 </head>
 <body>
@@ -15,6 +17,7 @@
     <a href="/">Home</a>
     <a href="/about">About</a>
     <a href="/form">Form</a>
+    <a href="/guestbook">Guestbook</a>
   </nav>
   <hr>
   {% block content %}{% endblock %}
