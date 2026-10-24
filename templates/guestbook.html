@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Guestbook{% endblock %}
+{% block content %}
+<h1>Guestbook 📖</h1>
+<p><a href="/form">Naya paigham likhein</a></p>
+{% for e in entries %}
+  <div class="entry">
+    <strong>{{ e.name }}</strong>
+    <small>{{ e.created_at }}</small>
+    <p>{{ e.message }}</p>
+  </div>
+{% else %}
+  <p>Abhi koi paigham nahi. Pehle aap likhein!</p>
+{% endfor %}
+{% endblock %}
