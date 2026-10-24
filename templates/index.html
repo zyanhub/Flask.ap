@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<h1>Welcome to My Flask App 🚀</h1>
-<p>This is my first web app.</p>
+<div class="card">
+  <h1>Welcome to My Flask App 🚀</h1>
+  <p>Ye meri pehli web app hai. Yahan aap guestbook mein apna paigham chhor sakte hain.</p>
+  <p>
+    <a class="button" href="/form">Paigham likhein</a>
+    <a href="/guestbook">Guestbook dekhein</a>
+  </p>
+</div>
 {% endblock %}
