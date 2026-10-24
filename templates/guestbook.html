@@ -2,14 +2,16 @@
 {% block title %}Guestbook{% endblock %}
 {% block content %}
 <h1>Guestbook 📖</h1>
-<p><a href="/form">Naya paigham likhein</a></p>
+<p><a class="button" href="/form">Naya paigham likhein</a></p>
 {% for e in entries %}
-  <div class="entry">
-    <strong>{{ e.name }}</strong>
-    <small>{{ e.created_at }}</small>
+  <div class="card entry">
+    <div class="entry-head">
+      <strong>{{ e.name }}</strong>
+      <small>{{ e.created_at }}</small>
+    </div>
     <p>{{ e.message }}</p>
   </div>
 {% else %}
-  <p>Abhi koi paigham nahi. Pehle aap likhein!</p>
+  <div class="card"><p class="muted">Abhi koi paigham nahi. Pehle aap likhein!</p></div>
 {% endfor %}
 {% endblock %}
