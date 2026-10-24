@@ -1,10 +1,12 @@
+
 {% extends "base.html" %}
 {% block title %}Form{% endblock %}
 {% block content %}
-<h1>Apna naam likhein</h1>
+<h1>Guestbook mein likhein</h1>
 {% if error %}<p class="error">{{ error }}</p>{% endif %}
 <form method="POST" action="/submit">
-  <input type="text" name="name" placeholder="Naam">
+  <p><input type="text" name="name" placeholder="Naam" maxlength="50" value="{{ name or '' }}"></p>
+  <p><textarea name="message" placeholder="Paigham" rows="4" maxlength="300">{{ message or '' }}</textarea></p>
   <button type="submit">Submit</button>
 </form>
 {% endblock %}
